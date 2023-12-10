@@ -52,7 +52,7 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.rosemary
+    android.hardware.vibrator-service.selene
 
 # Additional binaries & libraries needed for recovery
 TARGET_RECOVERY_DEVICE_MODULES += \
