@@ -1,0 +1,31 @@
+cc_library_static {
+    name: "libvibratorselene",
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.vibrator-V2-ndk_platform",
+    ],
+    export_include_dirs: ["include"],
+    srcs: ["Vibrator.cpp"],
+    visibility: [
+        ":__subpackages__",
+        "//hardware/interfaces/tests/extension/vibrator:__subpackages__",
+    ],
+}
+
+cc_binary {
+    name: "android.hardware.vibrator-service.selene",
+    relative_install_path: "hw",
+    init_rc: ["vibrator-selene.rc"],
+    vintf_fragments: ["vibrator-selene.xml"],
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.vibrator-V2-ndk_platform",
+    ],
+    static_libs: [
+        "libvibratorselene",
+    ],
+    srcs: ["main.cpp"],
+}
+
