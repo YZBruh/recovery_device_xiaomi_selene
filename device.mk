@@ -51,6 +51,9 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     fastbootd
 
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-service.selene
+
 # Additional binaries & libraries needed for recovery
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
@@ -62,7 +65,7 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
 
 # Copy the vibrator into recovery image
 PRODUCT_COPY_FILES += \
-	$(OUT_DIR)/target/product/rosemary/system/bin/hw/android.hardware.vibrator-service.selene:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/hw/android.hardware.vibrator-service.selene
+	$(OUT_DIR)/target/product/selene/system/bin/hw/android.hardware.vibrator-service.selene:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/hw/android.hardware.vibrator-service.selene
 
 # Health HAL
 PRODUCT_PACKAGES += \
